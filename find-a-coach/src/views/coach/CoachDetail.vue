@@ -1,14 +1,14 @@
 <template>
     <div class="container py-4">
         <button class="btn btn-info">&leftarrow; Back</button>
-        <div class="display-2 border-start border-info border-4 my-4 p-2 shadow">{{ coach.name }}</div>
+        <div class="display-2 border-start border-info border-4 my-4 p-2 shadow">{{ coach.fullName }}</div>
         <div class="border-start border-info border-4 my-4 p-2 shadow">
             Interested? Reach out Now:
             <router-link :to="contactLink">Contact</router-link>
         </div>
         <router-view></router-view>
         <div class="border-start border-info border-4 my-4 p-2">
-            <span v-for="(area, i) in coach.areas" :key="area" class="fs-6 shadow badge rounded-pill bg-dark me-2">
+            <span v-for="(area, i) in coach.aoe" :key="area" class="fs-6 shadow badge rounded-pill bg-dark me-2">
                 {{ area }}
             </span>
         </div>

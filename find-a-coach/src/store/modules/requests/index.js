@@ -10,7 +10,7 @@ export default {
                 {
                     id: 1,
                     coachId: 1,
-                    name: 'HK',
+                    fullName: 'HK',
                     email: 'a@a.com',
                     subject: 'gaming',
                     message: 'Lorem 123'

@@ -1,9 +1,9 @@
 <template>
     <div class="card p-3 shadow rounded-3">
-        <h2>{{ coach.name }}</h2>
+        <h2>{{ coach.fullName }}</h2>
         <h4> {{ coach.rate }}/hour</h4>
         <div class="mb-2">
-            <span v-for="(area, i) in coach.areas" :key="area" class="badge rounded-pill bg-dark me-2">
+            <span v-for="(area, i) in coach.aoe" :key="area" class="badge rounded-pill bg-dark me-2">
                 {{ area }}
             </span>
         </div>

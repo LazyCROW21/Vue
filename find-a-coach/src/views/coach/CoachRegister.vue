@@ -13,7 +13,7 @@
         <textarea class="form-control" rows="5" placeholder="Bio" v-model="bio"></textarea>
       </div>
       <div class="mb-3">
-        <arear-of-expertise v-model="areas"></arear-of-expertise>
+        <arear-of-expertise v-model="aoe"></arear-of-expertise>
       </div>
       <button class="btn btn-outline-primary rounded-0" :disabled="formError">Submit</button>
     </form>
@@ -21,6 +21,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 import ArearOfExpertise from '../../components/form/AreaOfExpertise.vue';
 
 export default {
@@ -32,20 +33,33 @@ export default {
       fullName: '',
       rate: null,
       bio: '',
-      areas: []
+      aoe: []
     };
   },
   methods: {
     onSubmit() {
-      console.log(this.fullName, this.rate, this.bio, this.areas);
-    }
+      const data = {
+        fullName: this.fullName,
+        bio: this.bio,
+        rate: this.rate,
+        aoe: this.aoe,
+      };
+      this.registerCoach(data);
+      this.fullName = '';
+      this.bio = '';
+      this.rate = null;
+      this.aoe = [];
+    },
+    ...mapActions({
+      registerCoach: 'coaches/registerCoach'
+    })
   },
   computed: {
     formError() {
-      if(!this.fullName) return true;
-      if(!this.rate) return true;
-      if(!this.bio) return true;
-      if(!this.areas.length) return true;
+      if (!this.fullName) return true;
+      if (!this.rate) return true;
+      if (!this.bio) return true;
+      if (!this.aoe.length) return true;
     }
   }
 }

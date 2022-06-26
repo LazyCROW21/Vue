@@ -10,8 +10,8 @@ export default {
                 {
                     id: 1,
                     rate: 2,
-                    name: 'HK',
-                    areas: ['gaming', 'party'],
+                    fullName: 'HK',
+                    aoe: ['gaming', 'party'],
                     bio: 'Lorem 123'
                 }
             ]

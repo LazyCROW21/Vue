@@ -35,8 +35,20 @@ export default {
   },
   methods: {
     onSubmit() {
-      console.log(this.fullName, this.email, this.subject, this.message);
-    }
+      const data = {
+        fullName: this.fullName,
+        email: this.email,
+        subject: this.subject,
+        message: this.message,
+        coachId: this.$route.params.id
+      }
+      console.log(data);
+      this.$store.dispatch('requests/sendRequest', data);
+      this.fullName = '';
+      this.email = '';
+      this.subject = '';
+      this.message = '';
+    },
   },
   computed: {
     formError() {
